@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
-
-import argparse
-parser = argparse.ArgumentParser(description='Helpful description here')
-parser.add_argument('--file', type=str, help="Input file for PyBank", required=True)
-args = parser.parse_args()
-
-# One-liner to copy/paste into command line:
-# python3 main.py --file="./Resources/budget_data.csv"
+import os
 
 """ Module 3 Challenge
 
@@ -29,9 +22,10 @@ The greatest decrease in profits (date and amount) over the entire period
 
 """
 
-def PyBank(file):
+def PyBank():
 
     summary_statement  = "Financial Analysis" + "\n\n" + "----------------------------\n\n"
+    file = os.path.join("Resources","budget_data.csv")
     with open(file, 'r') as fh:
         date = []
         profit_losses = []
@@ -79,4 +73,4 @@ def PyBank(file):
         fh.write(summary_statement)
         
 if __name__=="__main__":
-    PyBank(args.file)
+    PyBank()
