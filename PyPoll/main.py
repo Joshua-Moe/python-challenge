@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 
-import argparse
-parser = argparse.ArgumentParser(description='Helpful description here')
-parser.add_argument('--file', type=str, help="Input file for PyBank", required=True)
-args = parser.parse_args()
-
-# One-liner to copy/paste into command line:
-# python3 main.py --file="./Resources/election_data.csv"
+import os
 
 """ Module 3 Challenge
 
@@ -29,8 +23,9 @@ The winner of the election based on popular vote
 
 """
 
-def PyPoll(file):
+def PyPoll():
     election_dict = {}
+    file = os.path.join("Resources","election_data.csv")
     with open(file, 'r') as fh:
         lines = fh.readlines()
         header = lines[0] # I don't need the header for this; for the grading ruberic.
@@ -77,4 +72,4 @@ def PyPoll(file):
     
     
 if __name__=="__main__":
-    PyPoll(args.file)
+    PyPoll()
