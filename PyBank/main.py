@@ -65,11 +65,12 @@ def PyBank():
         summary_statement += f"Total: ${net_total}\n\n"
         summary_statement += f"Average Change: ${averageChanges}\n\n"
         summary_statement += f"Greatest Increase in Profits: {greatestIncrease_date} (${max(delta_profit)})\n\n"
-        summary_statement += f"Greatest Decrease in Profits: {greatestDecrease_date} (${min(delta_profit)})"
+        summary_statement += f"Greatest Decrease in Profits: {greatestDecrease_date} (${min(delta_profit)})\n"
         print(summary_statement)
             
     # Saving to output file
-    with open("./analysis/PyBank_output.txt",'w') as fh:
+    output_path = os.path.join("analysis","PyBank_output.txt")
+    with open(output_path,'w') as fh:
         fh.write(summary_statement)
         
 if __name__=="__main__":
