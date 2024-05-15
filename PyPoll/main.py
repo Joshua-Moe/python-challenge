@@ -67,7 +67,8 @@ def PyPoll():
         print(results)
     
     # Saving to output file
-    with open("./analysis/PyPoll_output.txt",'w') as fh:
+    output_path = os.path.join("analysis","PyPoll_output.txt")
+    with open(output_path,'w') as fh:
         fh.write(results)
     
     
